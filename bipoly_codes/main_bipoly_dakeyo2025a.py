@@ -1,6 +1,7 @@
 # Importation required to run this code
 import bipoly_solar_wind_solve_and_plot as bpsw
 import streamline_calc_dakeyo2024a as stream 
+import matplotlib.pyplot as plt
 #########################################
 # Inputs of the model : Isopoly 
 #########################################
@@ -58,7 +59,7 @@ phi_sat = 10     # in degrees
 if(stream_calc):
     (r_phi, phi, v_alf, u_phi) = stream.streamline_calc(r, n, u, phi_sat, plot_streamline)  
 ###############################################################
-
+plt.show()
 
 
 
