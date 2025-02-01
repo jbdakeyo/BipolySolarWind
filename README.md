@@ -42,25 +42,25 @@ import matplotlib.pyplot as plt
 #########################################
 
 # Length of the output model
-N = 5e3
+N = 2e4         # (Note : the number of points N has been inscreased compared to previous cases)
 L = 1.496e11      # set to 1au by default
 
 # Polytropic indexes
-gamma_p_values = [1, 1.57] 
-gamma_e_values = [1., 1.29]
+gamma_p_values = [0.905, 1.35] 
+gamma_e_values = [1.040, 1.21]
 
 # Coronal temperature
-Tpc = 1.63e6
-Tec = Tpc #1.070e6
+Tpc = 1.575e6
+Tec = 1.070e6
 
 # Isothermal radius (in solar radii)
-r_poly_p = 10
-r_poly_e = 10
+r_poly_p = 4.5
+r_poly_e = 3.5
 
 # Expansion factor parameters
-fm = 4
-r_exp = 1.7          # in solar radii
-sig_exp = 0.2       # in solar radii
+fm = 100
+r_exp = 1.9          # in solar radii
+sig_exp = 0.1       # in solar radii
 #########################################
 # Plotting option 
 plot_f = False
