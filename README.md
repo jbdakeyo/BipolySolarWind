@@ -21,7 +21,7 @@ For most combinations of physical conditions, the trans-sonic critical point is 
 
 * A two fluid isopoly solar wind with double transition ($\gamma_{s0} = 1$, $\gamma_{s1} \neq 1$), and ($r_{poly|p} \neq r_{poly|e}$) <details><p> - Closely similar to the single transition solution, at the difference that protons and electrons do not share the same polytropic radius. </details></p>
 
-* A two fluid bipoly solar wind with single transition ($\gamma_{s0} \neq 1$, $\gamma_{s1} \neq 1$), and ($r_{poly|p} \neq r_{poly|e}$) <details><p> - This case is closely similar to the isopoly single transition solution, at the difference that the first polytropic indexes $\gamma_{s0} are different to 1, leading to a non-isothermal evolution in the corona. </details></p>
+* A two fluid bipoly solar wind with single transition ($\gamma_{s0} \neq 1$, $\gamma_{s1} \neq 1$), and ($r_{poly|p} = r_{poly|e}$) <details><p> - This case is closely similar to the isopoly single transition solution, at the difference that the first polytropic indexes $\gamma_{s0} are different to 1, leading to a non-isothermal evolution in the corona. </details></p>
 
 * A two fluid bipoly solar wind with double transition ($\gamma_{s0} \neq 1$, $\gamma_{s1} \neq 1$), and ($r_{poly|p} \neq r_{poly|e}$) <details><p> - This case is closely similar to the bipoly single transition solution, but protons and electrons do not share the same polytropic radius. </details></p>
 
