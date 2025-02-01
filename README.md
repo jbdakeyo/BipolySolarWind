@@ -34,35 +34,36 @@ In the following example we solve and plot an f-subsonic isopoly solution with d
 
 ```python
 # Importation required to run this code
-import isopoly_solar_wind_solve_and_plot as ipsw
-
+import bipoly_solar_wind_solve_and_plot as bpsw
+import streamline_calc_dakeyo2024a as stream 
+import matplotlib.pyplot as plt
 #########################################
-# Inputs of the model 
+# Inputs of the model : Isopoly 
 #########################################
 
 # Length of the output model
-N = 7e4
+N = 5e3
 L = 1.496e11      # set to 1au by default
 
-# Polytropic ind
-gamma_p_max = 1.45
-gamma_e_max = 1.25
+# Polytropic indexes
+gamma_p_values = [1, 1.57] 
+gamma_e_values = [1., 1.29]
 
 # Coronal temperature
-Tp0 = 2e6
-Te0 = 1.5e6
+Tpc = 1.63e6
+Tec = Tpc #1.070e6
 
 # Isothermal radius (in solar radii)
-r_iso_p = 4 
-r_iso_e = 7 
+r_poly_p = 10
+r_poly_e = 10
 
 # Expansion factor parameters
-fm = 25
-r_exp = 1.9          # in solar radii
-sig_exp = 0.15       # in solar radii
+fm = 4
+r_exp = 1.7          # in solar radii
+sig_exp = 0.2       # in solar radii
 #########################################
 # Plotting option 
-plot_f = True
+plot_f = False
 plot_gamma = False
 
 plot_unT = True
@@ -70,13 +71,13 @@ plot_energy = False
 #########################################
 
 ###############################################################
-# Running of the main function
-(r, n, u, Tp, Te, gamma_p, gamma_e, f, bol_super) = ipsw.solve_isopoly(
-                                        N, L, gamma_p_max, gamma_e_max, 
-                                        Tp0, Te0, r_iso_p, r_iso_e,
+# Running the main function
+(r, n, u, Tp, Te, gamma_p, gamma_e, ind_rc, f, bol_super) = bpsw.solve_bipoly(
+                                        N, L, gamma_p_values, gamma_e_values, 
+                                        Tpc, Tec, r_poly_p, r_poly_e,
                                         fm, r_exp, sig_exp, plot_f, 
-                                        plot_gamma, plot_speed, 
-                                        plot_density, plot_temp, plot_energy)
+                                        plot_gamma, plot_unT, 
+                                        plot_energy)
 ###############################################################
 ```
 ![image](isopoly_example.png)
