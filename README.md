@@ -30,15 +30,15 @@ All the thermal regimes can be declined in both "f-subsonic" and "f-suersonic" t
 * f-subsonic solutions <details><p> -  The f-subsonic solutions are the more commonly used in solar wind modeling and space weather. They embed relatively slowly accelerating wind, and a critical radius location between 3 and 8 $r_\odot$ for coronal temperature of the order of 0.5 - 3 MK. For this type of solution, the influence of the expansion factor is to create a deceleration region within the super-expansion region. 
 * f-supersonic solutions <details><p> - The f-supersonic solutions are known, but less used in the space weather community. They induce a rapidly accelerating solar wind solution with a critical radius very close to the Sun inside the super-expansion region, ranging between 1 and $\sim$ 3 $r_\odot$, for coronal temperatures of the order of 0.5 - 3 MK. They induce more efficient work of pressure force leading to faster asymptotic as the f-subsonic solutions, for similar coronal conditions. They also induce a deceleration region, but approximately from the end of the super-expansion region to $\sim$ 8 $r_\odot$.  </details></p>
 
-The numerical and physical justification for the choice between the two solutions depends on the determination of the critical radius, which must respects the requirements of the transonic solutions.  More details are available in [Dakeyo et al. (2024b)](https://arxiv.org/abs/2408.06155). 
-Recommendations for appropriate isopoly input values are provided at the end of the `ExampleNotebook.ipynb` file in the repository.
+The numerical and physical justification for the choice between the two solutions is made automatically. It depends on the determination of the critical radius, which must respects the requirements of the transonic solutions.  More details are available in [Dakeyo et al. (2024b)](https://arxiv.org/abs/2408.06155). 
+Recommendations for appropriate bipoly input values are provided at the end of the `ExampleNotebook.ipynb` file in the repository.
 
 
-Since all solutions are computed with the same set of codes, each of the above solutions can be obtained by modifying the inputs parameters. The `main_iso_poly_dakeyo2024b` code returns an array of heliocentric distances ($r$ in solar radii), density ($n$ in #.$cm^-3$ ), fluid velocity ($u$ in km/s), fluid temperatures ($T_p$ and $T_e$ in Kelvin), expansion factor profile ($f$) and a bolean mentionning if this is a "f-supersonic" type solution (bol_super=0 $\rightarrow$ f-subsonic, bol_super=1 $\rightarrow$ f-supersonic). 
+Since all solutions are computed with the same set of codes, each of the above solutions can be obtained by modifying the inputs parameters. The `main_bipoly_dakeyo2024b` code returns an array of heliocentric distances ($r$ in solar radii), density ($n$ in #.$cm^-3$ ), fluid velocity ($u$ in km/s), fluid temperatures ($T_p$ and $T_e$ in Kelvin), polytropic indexes profiles ($\gamma_p$ and $\gamma_e$), index of the critical radius, expansion factor profile ($f$) and a bolean mentionning if this is a "f-supersonic" type solution (bol_super=0 $\rightarrow$ f-subsonic, bol_super=1 $\rightarrow$ f-supersonic). 
 
 All the outputs are `numpy array`. 
 
-In the following example we solve and plot an f-subsonic isopoly solution with double transition. All thermal regimes related to the evolution of the two species (proton and electron) are indicated by a different color: the fully isothermal region is in red, the region after the first thermal transition (one species isothermal and the other polytropic) is in light blue, and the region after the second thermal transition (fully polytropic) is in blue. 
+In the following example we solve and plot an f-supersonic bipoly solution with double transition. All thermal regimes related to the evolution of the two species (proton and electron) are indicated by a different color: the first thermal region ($\gamma_{p0}, \gamma_{e0}) is in red, the region after the first thermal transition (one species with $\gamma_0$ and the other with $\gamma_1$) is in light blue, and the region after the second thermal transition ($\gamma_{p1}, \gamma_{e1}) is in blue. 
 
 ```python
 # Importation required to run this code
@@ -90,9 +90,10 @@ plot_energy = False
 ```
 ![image](bipoly_example.png)
 
+The possible solutions presented here that can be made by the different inputs parameters are non-exaustive while covering a part of state of art solar wind modeling.
 Other examples for all the thermal regimes and types of solution (f-subsonic and f-supersonic) can be seen in `ExampleNotebook.ipynb`. 
 
-At the end of the same file, another function `stream_calc_dakeyo2024a` allows to trace the Parker's like spiral (streamline) associated with the computed isopoly solution. The code follows the backmapping method including acceleration and corotational effect presented in [Dakeyo et al. (2024a)](https://ui.adsabs.harvard.edu/abs/2024A%26A...686A..12D/abstract), that is also used in [Dakeyo et al. (2024b)](https://arxiv.org/abs/2408.06155). 
+At the end of the `ExampleNotebook.ipynb` file, another function `stream_calc_dakeyo2024a` allows to trace the Parker's like spiral (streamline) associated with the computed solution. The code follows the backmapping method including acceleration and corotational effect presented in [Dakeyo et al. (2024a)](https://ui.adsabs.harvard.edu/abs/2024A%26A...686A..12D/abstract), that is also used in [Dakeyo et al. (2024b)](https://arxiv.org/abs/2408.06155). 
 
 [google-site-verification: googleee621abb005dea4a.html](googleee621abb005dea4a.html)
 
