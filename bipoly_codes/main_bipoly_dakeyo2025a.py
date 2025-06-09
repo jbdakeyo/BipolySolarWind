@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 #########################################
 
 # Length of the output model
-N = 2e4         # (Note : the number of points N has been inscreased compared to previous cases)
+N = 5e4         # (Note : the number of points N has been inscreased compared to previous cases)
 L = 1.496e11      # set to 1au by default
 
 # Polytropic indexes
