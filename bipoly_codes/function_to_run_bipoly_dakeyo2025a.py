@@ -584,7 +584,7 @@ def function_to_run_bipoly(r0, Tec, Tpc, gamma_p_max, gamma_e_max, ind_r_poly_p,
     alpha_sauv[ind_rc] = alpha_sauv[ind_rc-1]
     
     
-    # Re-sampling tot fit to the initial size of r 
+    # Re-sampling to fit to the initial size of r 
     func_interp_u_h = interp1d( r, u_h, kind='linear', axis=-1)
     func_interp_gp = interp1d( r, gamma_p, kind='linear', axis=-1)
     func_interp_ge = interp1d( r, gamma_e, kind='linear', axis=-1)
