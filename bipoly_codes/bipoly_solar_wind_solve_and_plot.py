@@ -246,7 +246,7 @@ def solve_bipoly(N, L, gamma_p_max, gamma_e_max, Tpc, Tec, r_poly_p, r_poly_e
         plt.xlabel('Radius ($r \: / \: r_\\odot$)', fontsize=pol)
         plt.ylabel('Température (MK)', fontsize=pol)
         plt.title('Temperature : $T_{p|0}$ = ' + '%.2E' % int(Tp[0]) + 
-                  'K | $T_{e|0}$ = ' + '%.2E' % int(Te[0]) + 'K ', fontsize=0.9*pol)
+                  'K | $T_{e|0t}$ = ' + '%.2E' % int(Te[0]) + 'K ', fontsize=0.9*pol)
         plt.xscale('log')
         plt.yscale('log')
         plt.xlim([ r[0], 1.05*r[-1] ])
@@ -451,4 +451,9 @@ def solve_bipoly(N, L, gamma_p_max, gamma_e_max, Tpc, Tec, r_poly_p, r_poly_e
         
    
     return(r, n_h, u_h, Tp, Te, gamma_p, gamma_e, ind_rc_poly, f, bol_supersonic)
+        
+        
+        
+        
+        
         

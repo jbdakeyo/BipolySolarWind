@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 #########################################
 
 # Length of the output model
-N = 5e4         # (Note : the number of points N has been inscreased compared to previous cases)
+N = 2e4         # (Note : the number of points N has been inscreased compared to previous cases)
 L = 1.496e11      # set to 1au by default
 
 # Polytropic indexes
@@ -60,5 +60,8 @@ if(stream_calc):
     (r_phi, phi, v_alf, u_phi) = stream.streamline_calc(r, n, u, phi_sat, plot_streamline)  
 ###############################################################
 plt.show()
+
+
+
 
 
